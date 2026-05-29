@@ -33,6 +33,8 @@
 #include "ble_multi.h"
 #include "ble_multi_profile.h"
 
+#include "led_strand_effect.h"
+
 #if CONFIG_APP_MULTI && CONFIG_BT_GATT_SERVER_NUM
 
 #if LE_DEBUG_PRINT_EN
@@ -207,6 +209,8 @@ static int multi_event_packet_handler(int event, u8 *packet, u16 size, u8 *ext_p
         memcpy(cur_peer_addr_info, &ext_param[7], 7);
         multi_connection_update_enable = 1;
         pair_bond_enalbe = 0;
+
+        fc_effect.ble_connect_sta = 1;
         break;
 
     case GATT_COMM_EVENT_DISCONNECT_COMPLETE:
@@ -219,6 +223,8 @@ static int multi_event_packet_handler(int event, u8 *packet, u16 size, u8 *ext_p
                 multi_adv_config_set();
             }
         }
+
+        fc_effect.ble_connect_sta = 0;
         break;
 
     case GATT_COMM_EVENT_ENCRYPTION_CHANGE:

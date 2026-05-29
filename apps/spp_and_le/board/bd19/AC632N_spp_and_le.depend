@@ -69755,7 +69755,7 @@
 
 1719196543 d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\hardware\hardware.h
 
-1779514396 d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\led_strip\led_strand_effect.h
+1779762401 d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\led_strip\led_strand_effect.h
 	"cpu.h"
 	"led_strip_sys.h"
 	"WS2812FX.H"
@@ -69785,7 +69785,7 @@
 	"asm/ledc.h"
 	"asm/gpio.h"
 
-1776846957 d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\one_wire\one_wire.h
+1779762510 d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\one_wire\one_wire.h
 	"system/includes.h"
 
 1776387824 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\led_strip\led_strand_effect.c
@@ -69816,7 +69816,7 @@
 	"led_strand_effect.h"
 	"../../../include_lib/driver/cpu/bd19/asm/mcpwm.h"
 
-1779519097 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\led_strip\led_strip_sys.c
+1779762012 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\led_strip\led_strip_sys.c
 	"led_strip_sys.h"
 	"Adafruit_NeoPixel.H"
 	"led_strand_effect.h"
@@ -69827,7 +69827,7 @@
 
 1772503138 d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\protocol\dp_data_tran.h
 
-1779519726 d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\user_include.h
+1779763976 d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\user_include.h
 
 1776828926 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\led_strip\led_strip_voice.c
 	"led_strip_voice.h"
@@ -69847,7 +69847,7 @@
 1719208267 d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\led_strip\paint_tool.h
 	"led_strip_sys.h"
 
-1777100177 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\one_wire\one_wire.c
+1779768070 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\one_wire\one_wire.c
 	"system/includes.h"
 	"one_wire.h"
 	"led_strand_effect.h"
@@ -69879,7 +69879,7 @@
 1777082853 d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\user_ble_notify\user_ble_notify.h
 	"typedef.h"
 
-1779519614 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\rf24g_key\rf24g_key.c
+1779778982 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\rf24g_key\rf24g_key.c
 	"rf24g_key.h"
 	"led_strand_effect.h"
 	"save_flash.h"
@@ -69906,7 +69906,7 @@
 	"rf433_key.h"
 	"../../../apps/user_app/led_strip/led_strip_sys.h"
 
-1763775041 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\save_flash\save_flash.c
+1779773540 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\save_flash\save_flash.c
 	"system/includes.h"
 	"syscfg_id.h"
 	"save_flash.h"
@@ -69956,7 +69956,7 @@
 	<string.h>
 	"ws2812fx_tool.h"
 
-1777097993 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\spp_and_le\app_main.c
+1779762535 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\spp_and_le\app_main.c
 	"system/includes.h"
 	"app_config.h"
 	"app_action.h"
@@ -71384,7 +71384,7 @@
 	"../../../../apps/user_app/rf433_key/rf433_key.h"
 	"uart_update.h"
 
-1779706201 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\spp_and_le\examples\multi_conn\ble_multi_peripheral.c
+1779762702 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\spp_and_le\examples\multi_conn\ble_multi_peripheral.c
 	"system/app_core.h"
 	"system/includes.h"
 	"app_config.h"
@@ -71404,4 +71404,5 @@
 	"gatt_common/le_gatt_common.h"
 	"ble_multi.h"
 	"ble_multi_profile.h"
+	"led_strand_effect.h"
 

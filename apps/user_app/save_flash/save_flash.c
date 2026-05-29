@@ -52,6 +52,10 @@ void read_flash_device_status_init(void)
 #endif
         // printf("is not first power on\n");
     }
+
+    // 上电之后，默认蓝牙没有连接：
+    fc_effect.last_ble_connect_sta = 0;
+    fc_effect.ble_connect_sta = 0;
 }
 
 // 写入flash时间倒计时

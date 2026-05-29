@@ -39,75 +39,6 @@ void mcu_com_init(void)
     gpio_direction_output(MOTOR_DATA_IO_PORT, 1);
 }
 
-/**
- * @brief 打包基本数据  数据包
- *
- */
-// void pack_base(void)
-// {
-// #if 0
-
-//     u8 p;
-//     send_base_ins = 0;
-//     send_base_ins |= fc_effect.base_ins.mode; // bit0 ~ bit2 电机模式
-
-//     // 验证速度值范围是否正确
-//     {
-//         for (p = 0; p < 6; p++)
-//         {
-//             if (motor_period[p] == fc_effect.base_ins.period)
-//             {
-//                 break;
-//             }
-//         }
-
-//         if (p > 5)
-//         {
-//             p = 0;
-//         }
-
-//         send_base_ins |= ((u16)motor_period[p] << 8); // bit8 ~ bit15，电机速度
-//     }
-
-//     if (fc_effect.base_ins.dir)
-//     {
-//         send_base_ins |= BIT(6); // bit6 0:正转，1:反转
-//     }
-// #endif
-
-//     send_base_ins = 0;
-
-//     // 速度值
-//     send_base_ins |= ((u16)fc_effect.base_ins.period << 8); // bit8 ~ bit15，电机速度
-
-//     switch (fc_effect.base_ins.mode)
-//     {
-//     case MOTOR_MODE_STOP:
-//         // send_base_ins &= ~(0x07 << 0); // 0b-000 停止
-//         break;
-//     case MOTOR_MODE_FORWARD:
-//         send_base_ins |= 0x01 << 2; // 0b-100 360度转动
-//         // send_base_ins &= ~(0x01 << 6); // bit6 0:正转
-//         break;
-//     case MOTOR_MODE_REVERSE:
-//         send_base_ins |= (0x01 << 2 | 0x01 << 0); //
-//         send_base_ins |= 0x01 << 6;               // bit6 1：反转
-//         break;
-//     case MOTOR_MODE_FORWARD_REVERSE:
-//         // 正反转，由程序控制
-//         break;
-//     case MOTOR_MODE_MUSIC_RULATION:
-//         // 音乐律动，由程序控制
-//         break;
-//     }
-
-//     // bit7 0：开灯，1：关灯
-//     // send_base_ins &= ~(0x01 << 7); // 实际测试是 关灯
-//     // send_base_ins |= (0x01 << 7); // 实际测试是 开灯
-
-//     // printf("send_base_ins == 0x %x\n", (u16)send_base_ins);
-// }
-
 u8 is_one_wire_send_end(void)
 {
     return send_en;
@@ -274,20 +205,6 @@ void __attribute__((weak)) make_one_wire(void)
     }
     //  gpio_direction_output(IO_PORTA_01, 0);
 }
-
-// 数据发送使能
-// void enable_one_wire(void)
-// {
-//     // send_en = 0; // 不让发送中断继续发送
-//     // pack_base(); // 打包数据
-//     // flag_is_just_begin = 1;
-//     // send_en = 1;
-
-//     one_wire_send_disable();
-//     motor_mode_package_data(fc_effect.base_ins.mode, fc_effect.base_ins.period);
-//     send_base_ins = motor_mode_data; // send_base_ins ， 最终要发送给电机ic的数据
-//     one_wire_send_enable();
-// }
 
 /**
  * @brief 125ms调用一次  放在定时器使用
@@ -479,6 +396,18 @@ void motor_package_data(motor_mode_t mode, u8 speed_val)
     }
 }
 
+void motor_package_data_by_led_sta(u8 led_sta)
+{
+    // if (led_sta)
+    // {
+    //     motor_mode_data |= 0x01 << 7; //
+    // }
+    // else
+    // {
+    //     motor_mode_data &= ~(0x01 << 7);
+    // }
+}
+
 /**
  * @brief 完成一次数据的发送
  *
@@ -497,6 +426,16 @@ void motor_send_data(void)
 
         one_wire_send_disable();
         send_base_ins = motor_mode_data;
+        if (fc_effect.base_ins.led_sta)
+        {
+            // 电机ic驱动指示灯的引脚输出低电平，灯亮
+            send_base_ins &= ~(0x01 << 7);
+        }
+        else
+        { 
+            // 电机ic驱动指示灯的引脚输出高电平，灯灭
+            send_base_ins |= 0x01 << 7;
+        }
 #if USER_DEBUG_ENABLE
         // printf("motor_mode_data == %x\n", motor_mode_data);
 #endif
@@ -655,3 +594,24 @@ void motor_music_rulation_mode_handle(void)
     }
 #endif
 }
+
+// 电机ic驱动的led逻辑控制
+void motor_ctl_led_handle(void)
+{
+    if (fc_effect.last_ble_connect_sta != fc_effect.ble_connect_sta)
+    {
+        fc_effect.last_ble_connect_sta = fc_effect.ble_connect_sta;
+
+        if (fc_effect.ble_connect_sta)
+        {
+            fc_effect.base_ins.led_sta = 1;
+        }
+        else
+        {
+            fc_effect.base_ins.led_sta = 0;
+        }
+
+        motor_send_data();
+    } 
+}
+

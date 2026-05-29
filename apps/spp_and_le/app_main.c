@@ -562,6 +562,7 @@ void motor_task(void)
 {
     while (1)
     {
+        motor_ctl_led_handle();
         motor_forward_reverse_mode_handle();
         motor_music_rulation_mode_handle();
         os_time_dly(1);

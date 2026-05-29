@@ -2286,12 +2286,14 @@ obj/Release/apps/user_app/one_wire/one_wire.o
 -r=obj/Release/apps/user_app/one_wire/one_wire.o,set_stepmotor_fast,pl
 -r=obj/Release/apps/user_app/one_wire/one_wire.o,effect_stepmotor,pl
 -r=obj/Release/apps/user_app/one_wire/one_wire.o,get_sound_triggered_by_motor,
+-r=obj/Release/apps/user_app/one_wire/one_wire.o,motor_package_data_by_led_sta,pl
 -r=obj/Release/apps/user_app/one_wire/one_wire.o,motor_send_data,pl
 -r=obj/Release/apps/user_app/one_wire/one_wire.o,os_time_dly,
 -r=obj/Release/apps/user_app/one_wire/one_wire.o,motor_forward_reverse_mode_handle,pl
 -r=obj/Release/apps/user_app/one_wire/one_wire.o,motor_music_rulation_mode_handle,pl
 -r=obj/Release/apps/user_app/one_wire/one_wire.o,sound_triggered_by_motor_get,l
 -r=obj/Release/apps/user_app/one_wire/one_wire.o,sound_triggered_by_motor_clear,l
+-r=obj/Release/apps/user_app/one_wire/one_wire.o,motor_ctl_led_handle,pl
 -r=obj/Release/apps/user_app/one_wire/one_wire.o,motor_period,pl
 -r=obj/Release/apps/user_app/one_wire/one_wire.o,fc_effect,l
 obj/Release/apps/user_app/protocol/dp_data_tran.o
@@ -2908,6 +2910,7 @@ obj/Release/apps/spp_and_le/app_main.o
 -r=obj/Release/apps/spp_and_le/app_main.o,run_tick_per_10ms,l
 -r=obj/Release/apps/spp_and_le/app_main.o,WS2812FX_service,l
 -r=obj/Release/apps/spp_and_le/app_main.o,motor_task,pl
+-r=obj/Release/apps/spp_and_le/app_main.o,motor_ctl_led_handle,l
 -r=obj/Release/apps/spp_and_le/app_main.o,motor_forward_reverse_mode_handle,l
 -r=obj/Release/apps/spp_and_le/app_main.o,motor_music_rulation_mode_handle,l
 -r=obj/Release/apps/spp_and_le/app_main.o,ble_notify_task,pl
@@ -3860,6 +3863,7 @@ obj/Release/apps/spp_and_le/examples/multi_conn/ble_multi_peripheral.o
 -r=obj/Release/apps/spp_and_le/examples/multi_conn/ble_multi_peripheral.o,puts,l
 -r=obj/Release/apps/spp_and_le/examples/multi_conn/ble_multi_peripheral.o,mul_server_init_cfg,pl
 -r=obj/Release/apps/spp_and_le/examples/multi_conn/ble_multi_peripheral.o,ZD_HCI_handle,pl
+-r=obj/Release/apps/spp_and_le/examples/multi_conn/ble_multi_peripheral.o,fc_effect,l
 obj/Release/apps/spp_and_le/examples/nonconn_24g/app_nonconn_24g.o
 obj/Release/apps/spp_and_le/examples/nonconn_24g/ble_24g_deal.o
 obj/Release/apps/spp_and_le/examples/trans_data/app_spp_and_le.o

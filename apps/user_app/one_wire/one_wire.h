@@ -56,6 +56,8 @@ typedef struct
     */
     u8 last_mode;
     u8 dir_in_mode_forward_reverse; // 正反转模式下，电机当前的旋转方向。0：正转，1：反转
+
+    u8 led_sta; // 电机ic驱动的led状态
 } base_ins_t;
 
 extern u8 motor_period[6];
@@ -70,8 +72,12 @@ void one_wire_set_mode(motor_mode_t mode);
 void one_wire_set_period(u8 p);
 
 void motor_package_data(motor_mode_t mode, u8 speed_val);
+// void motor_package_data_by_led_sta(u8 led_sta);
+
 void motor_send_data(void);
 
+
+void motor_ctl_led_handle(void);
 void motor_forward_reverse_mode_handle(void);
 void motor_music_rulation_mode_handle(void);
 
