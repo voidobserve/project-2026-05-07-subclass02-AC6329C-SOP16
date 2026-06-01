@@ -69816,7 +69816,7 @@
 	"led_strand_effect.h"
 	"../../../include_lib/driver/cpu/bd19/asm/mcpwm.h"
 
-1779762012 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\led_strip\led_strip_sys.c
+1780034859 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\led_strip\led_strip_sys.c
 	"led_strip_sys.h"
 	"Adafruit_NeoPixel.H"
 	"led_strand_effect.h"
@@ -69854,7 +69854,7 @@
 	"led_strip_voice.h"
 	"user_include.h"
 
-1777096789 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\protocol\dp_data_tran.c
+1780276038 source:d:\project\2026-05-07-世纪光电-mini light-ac6329c-sop16\code\project-2026-05-07-subclass02-ac6329c-sop16\apps\user_app\protocol\dp_data_tran.c
 	"cpu.h"
 	"led_strip_sys.h"
 	"paint_tool.h"
