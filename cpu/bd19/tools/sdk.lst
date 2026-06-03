@@ -39055,17 +39055,17 @@ update_target_end:
  1e18536:    73 2c             	if (r6 == 0) goto 230 <update_target_end+0x21C2 : 1e1861e >
  1e18538:    25 73             	r5 = 50
  1e1853a:    0d 0a             	sp += 24
- 1e1853c:    00 4d             	r0 = [r6 + 64]
- 1e1853e:    61 79             	r1 = 150
- 1e18540:    20 32             	if (r1 != 0) goto 64 <update_target_end+0x2126 : 1e18582 >
- 1e18542:    36 20             	if (r0 == 0) goto 108 <update_target_end+0x2154 : 1e185b0 >
+ 1e1853c:    00 4a             	r0 = [r5 + 0]
+ 1e1853e:    75 6e             	r5 = b[r7 + 7] (u)
+ 1e18540:    20 20             	if (r0 == 0) goto 64 <update_target_end+0x2126 : 1e18582 >
+ 1e18542:    33 20             	if (r0 == 0) goto 102 <update_target_end+0x214E : 1e185aa >
  1e18544:    32 30             	if (r0 != 0) goto 100 <update_target_end+0x214E : 1e185aa >
  1e18546:    32 36             	if (r3 != 0) goto 100 <update_target_end+0x2150 : 1e185ac >
- 1e18548:    00 31             	if (r0 != 0) goto -512 <update_target_end+0x1EEE : 1e1834a >
- 1e1854a:    30 3a             	if (r5 != 0) goto 96 <update_target_end+0x2150 : 1e185ac >
- 1e1854c:    35 33             	if (r1 != 0) goto -406 <update_target_end+0x1F5C : 1e183b8 >
- 1e1854e:    3a 31             	if (r0 != 0) goto -396 <update_target_end+0x1F68 : 1e183c4 >
- 1e18550:    32 00             	pc = [sp++]
+ 1e18548:    00 30             	if (r0 != 0) goto 0 <update_target_end+0x20EE : 1e1854a >
+ 1e1854a:    39 3a             	if (r5 != 0) goto 114 <update_target_end+0x2162 : 1e185be >
+ 1e1854c:    30 37             	if (r3 != 0) goto -416 <update_target_end+0x1F52 : 1e183ae >
+ 1e1854e:    3a 35             	if (r2 != 0) goto -396 <update_target_end+0x1F68 : 1e183c4 >
+ 1e18550:    38 00             	cc = 0
  1e18552:    6d 73             	r13 = 54
  1e18554:    67 5f             	r7 = h[r7 + 44] (u)
  1e18556:    74 61             	r4 = b[r0 + 23] (u)
