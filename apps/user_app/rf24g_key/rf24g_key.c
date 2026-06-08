@@ -380,13 +380,28 @@ void rf24g_28keys_event_r1c3_click_handle(void)
 #if USER_DEBUG_ENABLE
     // printf("28keys event r1c3\n");
 #endif
-    // 只关 七彩灯 和 电机
+    // 关闭 七彩灯、电机、流星灯
     colorful_light_close();
     fb_led_on_off_state(); // 与app同步开关状态
 
     motor_close();
     fb_motor_mode();  // 向app反馈电机的模式
     fb_motor_speed(); // 向app反馈电机转速
+
+    fc_effect.star_on_off = DEVICE_OFF;
+    WS2812FX_stop();
+    WS2812FX_setSegment_colorOptions(
+        1,                     // 第0段
+        1,                     // 起始位置
+        fc_effect.led_num - 1, // 结束位置
+        &close_metemor,        // 效果
+        0,                     // 颜色
+        fc_effect.star_speed,  // 速度
+        0);                    // 选项，这里像素点大小：3 REVERSE决定方向
+    // WS2812FX_start();
+    WS2812FX_resetSegmentRuntime(1); // 重置流星灯所在的段运行时参数
+    WS2812FX_running_flag_set();
+    fd_meteor_on_off(); // 向app反馈流星灯的开关机状态
 }
 
 void rf24g_28keys_event_r1c4_click_handle(void)
@@ -395,13 +410,16 @@ void rf24g_28keys_event_r1c4_click_handle(void)
     // printf("28keys event r1c4\n");
 #endif
 
-    // 只开 七彩灯 和 电机
+    // 打开 七彩灯、电机、流星灯
     colorful_light_open();
     fb_led_on_off_state(); // 与app反馈七彩灯的开关状态
 
     motor_open();
     fb_motor_mode();  // 向app反馈电机的模式
     fb_motor_speed(); // 向app反馈电机转速
+
+    fc_effect.star_on_off = DEVICE_ON;
+    ls_meteor_stat_effect();
 }
 
 void rf24g_28keys_event_r2c1_click_handle(void)
