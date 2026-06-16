@@ -500,7 +500,8 @@ void motor_forward_reverse_mode_handle(void)
 
 // 声控模式下，电机快速转动的超时时间
 // 由于处理函数是10ms调用一次，这里要除以10
-#define MOTOR_TIMEOUT_CNT_IN_MUSIC_RULATION (2000 / 10)
+// #define MOTOR_TIMEOUT_CNT_IN_MUSIC_RULATION (2000 / 10)
+#define MOTOR_TIMEOUT_CNT_IN_MUSIC_RULATION (400 / 10)
 // 电机声控模式下，对应的处理函数
 // 目前与 fc_effect.base_ins.period 无关，只与 fc_effect.base_ins.sensitivity 有关
 void motor_music_rulation_mode_handle(void)

@@ -56,6 +56,12 @@ void read_flash_device_status_init(void)
     // 上电之后，默认蓝牙没有连接：
     fc_effect.last_ble_connect_sta = 0;
     fc_effect.ble_connect_sta = 0;
+
+    // 每次上电，默认打开七彩灯、流星灯、电机
+    fc_effect.on_off_flag = DEVICE_ON;
+    fc_effect.star_on_off = DEVICE_ON;
+    fc_effect.motor_on_off = DEVICE_ON;
+    fc_effect.base_ins.mode = fc_effect.base_ins.last_mode;
 }
 
 // 写入flash时间倒计时

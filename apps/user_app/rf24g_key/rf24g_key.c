@@ -533,9 +533,9 @@ void rf24g_28keys_event_r3c3_click_handle(void)
     }
 
     color_t color_structure = {0};
-    color_structure.r = 138;
-    color_structure.g = 201;
-    color_structure.b = 151;
+    color_structure.r = 0;
+    color_structure.g = 255;
+    color_structure.b = 120;
     color_structure.w = 0;
     colorful_lights_set_static_mode(color_structure);
 }
